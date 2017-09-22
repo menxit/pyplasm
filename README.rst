@@ -72,7 +72,7 @@ IMPORTANT: do not install brew since it can cause conflicts with the following i
 	cd /Users/$USERNAME/pyplasm
 	mkdir build
 	
-6. Run Cmake from command line:
+6. Run Cmake from command line::
 
         cd build
         
