@@ -76,12 +76,13 @@ IMPORTANT: do not install brew since it can cause conflicts with the following i
 
         cd build
         
+        export PYTHON_DIR=$(ls /Users/$USER/anaconda/pkgs/ | grep python-2\.7 | head -1) && \
         /Applications/CMake.app/Contents/bin/cmake ../ \
-             -G Xcode \
-             -DPYTHON_LIBRARY=/Users/$USER/anaconda/pkgs/python-2.7.12-1/lib/libpython2.7.dylib \
-             -DPYTHON_INCLUDE_DIR=/Users/$USER/anaconda/pkgs/python-2.7.12-1/include/python2.7/ \
-             -DPYTHON_EXECUTABLE=/Users/$USER/anaconda/bin/python \
-             -DPYPLASM_REGENERATE_SWIG_WRAPPERS=0        
+            -G Xcode \
+            -DPYTHON_LIBRARY=/Users/$USER/anaconda/pkgs/$PYTHON_DIR/lib/libpython2.7.dylib \
+            -DPYTHON_INCLUDE_DIR=/Users/$USER/anaconda/pkgs/$PYTHON_DIR/include/python2.7/ \
+            -DPYTHON_EXECUTABLE=/Users/$USER/anaconda/bin/python \
+            -DPYPLASM_REGENERATE_SWIG_WRAPPERS=0
 
 7. Build and install::
 
